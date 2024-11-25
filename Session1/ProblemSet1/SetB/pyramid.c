@@ -4,7 +4,6 @@
 where this x height is defined by the user!*/
 
 void RightPyramid(int, int);
-void LeftPyramid(int);
 
 int main(void)
 {
