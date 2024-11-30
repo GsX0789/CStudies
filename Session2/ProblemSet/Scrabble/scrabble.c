@@ -12,18 +12,28 @@ int isConsonantValueEight(char consonant);
 int isConsonantValueTen(char consonant);
 
 
+
 int main(void)
 {
 
-    const int MAX_LENGHT = 100;
+    const int MAX_LENGHT = 100;    
     const int SCORES[] = {1,2,3,4,5,8,10};
 
-    int player1_score = 0;
 
     char word[MAX_LENGHT];
-    printf("Enter a word to see its score value\n");
-    printf(">");
+    char word2[MAX_LENGHT];
+
+    int player1_score = 0;
+    int player2_score = 0;
+
+
+    printf("Scrabble Game!!, Enter a Word!\n");
+    printf("Player1: ");
     fgets(word, MAX_LENGHT, stdin);
+
+    printf("Player2: ");
+    fgets(word2, MAX_LENGHT, stdin);
+
 
     for (int index = 0; index < strlen(word); index++)
     {
@@ -61,10 +71,57 @@ int main(void)
        } 
     }
 
+    for (int index = 0; index < strlen(word2); index++)
+    {
+       if(isVowel(word2[index]))
+       {
+            player2_score += SCORES[0];
+       }
+       else if(isConsonantValueOne(word2[index]))
+       {
+            player2_score += SCORES[0];
+       }
+       else if(isConsonantValueTwo(word2[index]))
+       {
+            player2_score += SCORES[1];
+       }
+       else if(isConsonantValueThree(word2[index]))
+       {
+            player2_score += SCORES[2];
+       } 
+       else if(isConsonantValueFour(word2[index]))
+       {
+            player2_score += SCORES[3];
+       } 
+       else if(isConsonantValueFive(word2[index]))
+       {
+            player2_score += SCORES[4];
+       } 
+       else if(isConsonantValueEight(word2[index]))
+       {
+            player2_score += SCORES[5];
+       }  
+       else if(isConsonantValueTen(word2[index]))
+       {
+            player2_score += SCORES[6];
+       } 
+    }
+
     printf("\nPlayer1 Score: %i", player1_score);
+    printf("\nPlayer2 Scores: %i", player2_score);
+
+    if(player1_score > player2_score)
+    {
+        printf("\nPlayer1 Wins!!");
+    }
+    else
+    {
+        printf("\nPlayer2 Wins!!");
+    }
 
     return 0;
 }
+
 
 //Checking if it is a consonant that its value is two
 int isConsonantValueOne(char consonant)
