@@ -38,8 +38,6 @@ int main(void)
 
     for (int i = 0; i < 4; i++)
     {
-        //Equals to 0 means that it succefully happen
-        char *currentName = names[i];
         if(strcmp(names[i], name) == 0)
         {
             printf("\nThe phone number of %s is %s", name, phNumbers[i]);
