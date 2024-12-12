@@ -72,8 +72,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-//It's is not checking for invalid input, see why later!
-
 bool vote(char *cName)
 {
     for (int i = 0; i < candidate_count; i++)
